@@ -13,7 +13,16 @@ const greeting = (language) => {
   // language: 'Spanish' -> 'Hola!'
   // language: 'Chinese' -> 'Ni Hao!'
   // if language is undefined return 'Hello!'
-
+  switch (language) {
+    case 'German':
+      return 'Guten Tag!';
+    case 'Spanish':
+      return 'Hola!';
+    case 'Chinese':
+      return 'Ni Hao!';
+    default:
+      return 'Hello!';
+  }
 };
 
 const isTenOrFive = (num) => {
@@ -56,6 +65,11 @@ const isPrime = (num) => {
   // hint: a prime number is only evenly divisible by itself and 1
   // hint2: you can solve this using a for loop
   // note: 0 and 1 are NOT considered prime numbers
+  if (num === 0 || num === 1) return false;
+  for (let i = 2; i < num; i++) {
+    if (num % i === 0) return false;
+  }
+  return true;
 };
 
 const returnFirst = (arr) => {
